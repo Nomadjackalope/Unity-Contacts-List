@@ -5,6 +5,26 @@ https://www.assetstore.unity3d.com/en/#!/content/20885
 
 To test this asset just drag drop ContactsListGUI script to empty GameObject in your scene.
 
+To get started put the following code in a script on the main camera.
+
+```csharp
+void Start() {
+    LoadContacts();
+}
+
+void LoadContacts() {
+	Contacts.LoadContactsList(onDone, onFail);
+}
+
+void onDone() {
+	Debug.Log("NumContacts: " + Contacts.ContactsList.Count);
+}
+
+void onFail(string fail)  {
+	Debug.Log("LoadContacts failed: " + fail);
+}
+```
+
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6B8XHP9N5DXBW">
     <img src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png">
     </img>
